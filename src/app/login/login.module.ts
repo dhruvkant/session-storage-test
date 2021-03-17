@@ -4,9 +4,10 @@ import { SigninComponent } from "./signin/signin.component";
 import { LoginRoutingModule } from "./login-routing.module";
 import { MatCardModule } from "@angular/material/card";
 import { MatButtonModule } from "@angular/material/button";
+import { MatInputModule } from "@angular/material/input";
 
 @NgModule({
-  imports: [CommonModule, MatButtonModule, MatCardModule, LoginRoutingModule],
+  imports: [CommonModule, MatButtonModule, MatCardModule, MatInputModule, LoginRoutingModule],
   declarations: [SigninComponent]
 })
 export class LoginModule {}
