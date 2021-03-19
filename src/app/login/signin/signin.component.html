@@ -1,15 +1,23 @@
 <div fxLayout="column" fxLayoutAlign="center center">
-  <mat-card>
-    <mat-card-title>Login</mat-card-title>
-    <mat-card-content>
-      <mat-form-field>
-        <mat-label for="username"></mat-label>
-        <input matInput name="username" type="text" appearance="'outline'"/>
-      </mat-form-field>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-raised-button>Cancel</button>
-      <button mat-raised-button color="primary">Login</button>
-    </mat-card-actions>
-  </mat-card>
+  <form [formGroup]="loginFormGroup">
+    <mat-card>
+      <mat-card-title>Login</mat-card-title>
+      <mat-card-content>
+        <div fxLayout="column" fxLayoutAlign="start center">
+          <mat-form-field>
+            <mat-label for="username">Username</mat-label>
+            <input type="text" formControlName="username" matInput name="username" />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label for="password">Password</mat-label>
+            <input type="password" formControlName="password" matInput name="password" />
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button>Cancel</button>
+        <button mat-raised-button color="primary">Login</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
 </div>
