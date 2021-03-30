@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { app_config } from "./config/app.config";
+import { ConfigToken } from "./config/app.config";
 import { AppConfigValue } from "./config/app.config";
 
 @NgModule({
@@ -8,7 +8,7 @@ import { AppConfigValue } from "./config/app.config";
   declarations: [],
   providers: [
     {
-      provide: app_config,
+      provide: ConfigToken,
       useValue: AppConfigValue
     }
   ],
