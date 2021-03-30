@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { AesService } from "../../services/aes.service";
 
 @Component({
   selector: "app-signin",
@@ -7,15 +8,21 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
   styleUrls: ["./signin.component.scss"]
 })
 export class SigninComponent implements OnInit {
-  
   public loginFormGroup: FormGroup = null;
-  
-  constructor(private formBuilder: FormBuilder) {}
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private aesService: AesService
+  ) {}
 
   ngOnInit() {
     this.loginFormGroup = this.formBuilder.group({
       username: [null, [Validators.required]],
       password: [null, [Validators.required]]
-    })
+    });
+  }
+
+  login() {
+    this.aesService.encrypt();
   }
 }
